@@ -7,9 +7,23 @@ class Login extends Component {
   }
   render() { 
     return (
-      <div className="Login"></div>
-    );
+      <div className="Login">
+      <form>
+      
+      <div>
+      <p>Username  <input type="text" placeholder="Username"/></p>
+     
+      </div>
+      
+      <div>
+      <p>Password  <input type="text" placeholder="Passowrd"/></p>
+      </div>
+      </form>
+      
+      </div>
+      
+      );
+    }
   }
-}
- 
-export default Login;
+  
+  export default Login;

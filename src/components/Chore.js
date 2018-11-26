@@ -13,7 +13,9 @@ class Chore extends Component {
   render() { 
     return (
       <div className="Chore">
-        
+        <div>
+          <p>Login</p>
+        </div>
       </div>
     );
   }

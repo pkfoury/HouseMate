@@ -9,17 +9,18 @@ class Home extends Component {
     }
   }
 
-  handle() {
-    // this.setState( => {
-    //   peanut: peanut++;
-    // })
-  }
+  // handle() {
+  //    this.setState({
+  //      peanut: 4
+  //    });
+  // }
 
   render() { 
+    console.log('render');
     return (
       <div className="Home">
         <p className="counter">{this.state.peanut}</p>
-        <button className="but" onClick={this.handle()}>button</button>
+        <button className="but" onClick={this.handle}>button</button>
       </div>
     );
   }
