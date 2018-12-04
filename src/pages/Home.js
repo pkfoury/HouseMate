@@ -9,6 +9,12 @@ class Home extends Component {
     }
   }
 
+  increment = () => {
+    this.setState({ 
+      peanut: this.state.peanut + 1 }
+      );
+  }
+
   // handle() {
   //    this.setState({
   //      peanut: 4
