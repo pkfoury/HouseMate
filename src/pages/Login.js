@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input,  } from 'reactstrap';
-import './Styling/Chore.css';
+import './Styling/login.css';
 
 class Login extends Component {
   constructor(props) {
@@ -18,24 +18,23 @@ class Login extends Component {
   //   event.preventDefault();
   // }
   
-  
-  
   render() { 
     return (
       <div className="Login">
+        <h3 className="title">Login</h3>
         <Form>
-          <FormGroup>
+          <FormGroup className="input">
             <Label for="exampleEmail">Email</Label>
             <Input type="email" name="email" id="exampleEmail" placeholder="Email" />
           </FormGroup>
 
-          <FormGroup>
+          <FormGroup  className="input">
             <Label for="exampleEmail">Password</Label>
             <Input type="email" name="email" id="exampleEmail" placeholder="Password" />
           </FormGroup>
         </Form>
 
-        <Button>Login</Button>
+        <Button className="butt">Login</Button>
       </div>
       
       );

@@ -1,0 +1,18 @@
+.Login {
+    border-style: solid; 
+    border-color: #455C7B;
+    border-radius: 15px;
+    margin: 50px 300px;
+}
+
+.input {
+    margin: 0px 30px;
+}
+
+.butt {
+    margin-bottom: 20px;
+}
+
+.title {
+    margin-top: 10px;
+}
