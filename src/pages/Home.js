@@ -7,19 +7,14 @@ class Home extends Component {
     this.state = {
       peanut: 1
     }
+    this.handle = this.handle.bind(this)
   }
 
-  increment = () => {
-    this.setState({ 
-      peanut: this.state.peanut + 1 }
-      );
+  handle() {
+     this.setState({
+       peanut: this.state.peanut + 1
+     });
   }
-
-  // handle() {
-  //    this.setState({
-  //      peanut: 4
-  //    });
-  // }
 
   render() { 
     console.log('render');
