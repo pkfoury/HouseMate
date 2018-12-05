@@ -17,11 +17,11 @@ class Home extends Component {
   }
 
   render() { 
-    console.log('render');
     return (
       <div className="Home">
         <p className="counter">{this.state.peanut}</p>
         <button className="but" onClick={this.handle}>button</button>
+        <Chore />
       </div>
     );
   }

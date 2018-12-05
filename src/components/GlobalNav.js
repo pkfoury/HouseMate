@@ -13,7 +13,7 @@ import {
   DropdownItem } from 'reactstrap';
 import './GlobalNav.css';
 
-export default class GlobalNav extends React.Component {
+export default class GlobalNav extends Component {
   constructor(props) {
     super(props);
 
@@ -31,15 +31,12 @@ export default class GlobalNav extends React.Component {
     return (
       <div>
         <Navbar className="nav" dark expand="md">
-          <NavbarBrand href="/">reactstrap</NavbarBrand>
+          <NavbarBrand href="/">HouseMate</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">Components</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                <NavLink href="/login">Login</NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
