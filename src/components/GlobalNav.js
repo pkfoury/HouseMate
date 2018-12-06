@@ -38,6 +38,9 @@ export default class GlobalNav extends Component {
               <NavItem>
                 <NavLink href="/login">Login</NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink href="/home">Home</NavLink>
+              </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
                   Options
