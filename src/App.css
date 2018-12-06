@@ -31,7 +31,7 @@
   }
 }
 
-button {
+.btn {
   color: white;
-  background-color: #AC6C82
+  background-color: #AC6C82 !important;
 }

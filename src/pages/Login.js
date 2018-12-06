@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input,  } from 'reactstrap';
-import './Styling/login.css';
+import './Styling/Login.css';
 
 class Login extends Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class Login extends Component {
   
   render() { 
     return (
-      <div className="Login">
+      <div className="login">
         <h3 className="title">Login</h3>
         <Form>
           <FormGroup className="input">
@@ -34,7 +34,7 @@ class Login extends Component {
           </FormGroup>
         </Form>
 
-        <Button className="butt">Login</Button>
+        <Button className="button">Login</Button>
       </div>
       
       );

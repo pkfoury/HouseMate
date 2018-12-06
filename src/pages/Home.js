@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import MemberCard from '../components/MemberCard'
-import { CardDeck } from 'reactstrap';
+import './Styling/Home.css'
+import { CardDeck } from 'reactstrap'
+import Member from '../components/Member';
+import { apiGet } from '../functions/Api'
 
 class Home extends Component {
   constructor(props) {
@@ -17,29 +19,29 @@ class Home extends Component {
   generateCard = () => {
     let card = []
     for (let i = 0; i < 3; i++) {
-      card.push(<MemberCard/>);
+      card.push(<Member />);
     }
 
     return card;
   }
-  
-  render() { 
+
+  render() {
     return (
       <div>
-      <h1> {this.state.houseName} </h1> 
-      <CardDeck>
-      {this.generateCard()}
-      </CardDeck>
-      
-      
+        <h1> {this.state.houseName} </h1>
+        <CardDeck>
+          {this.generateCard()}
+        </CardDeck>
+
+
 
       </div>
-      );
-    }
+    );
   }
-  
-  
-  {/* <p className="counter">{this.state.peanut}</p>
+}
+
+
+{/* <p className="counter">{this.state.peanut}</p>
   <button className="but" onClick={this.handle}>button</button>
 <Chore /> */}
 

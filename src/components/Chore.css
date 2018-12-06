@@ -1,10 +1,4 @@
-/* .par {
-    font-size: 20;
+.row {
+  padding: 10px;
+  justify-content: center;
 }
-
-
-.Login {
-    background: pink;
-    padding: 10px;
-    margin: 10px 60px;
-} */

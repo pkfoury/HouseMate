@@ -14,9 +14,9 @@ class Chore extends Component {
 
   render() {
     return (
-      <div className="Chore">
+      <div className="chore">
         <Row>
-          <Col lg="10" xs="4">
+          <Col lg="10" xs="6">
             <Card body >
               <CardTitle>Chore</CardTitle>
               <CardText>Chore text</CardText>

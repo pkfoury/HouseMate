@@ -12,8 +12,10 @@ class App extends Component {
         <Nav />
         <Router>
           <div>
-            <Route exact path='/' component={Home} />
             <Route path='/login' component={Login} />
+
+            {/* if authed */}
+            <Route exact path='/' component={Home} />
             <Route path='/home' component={Home} />
           </div>
         </Router>

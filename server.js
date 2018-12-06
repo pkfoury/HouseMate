@@ -18,11 +18,31 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 // get homes
 app.get('/homes', (req, res) => {
+  console.log('homes endpoint');
   db.query('SELECT * FROM homes', function (error, results) {
     if (error) throw error;
     res.send(results);
   });
 })
+
+// get member
+app.get('/members', (req, res) => {
+  console.log('members endpoint');
+  db.query('SELECT * FROM members', function (error, results) {
+    if (error) throw error;
+    res.send(results);
+  });
+})
+
+// get tasks
+app.get('/tasks', (req, res) => {
+  console.log('tasks endpoint');
+  db.query('SELECT * FROM tasks', function (error, results) {
+    if (error) throw error;
+    res.send(results);
+  });
+})
+
 
 // serve react site
 if (process.env.NODE_ENV == 'prod') {

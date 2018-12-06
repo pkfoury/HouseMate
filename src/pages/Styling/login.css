@@ -1,4 +1,4 @@
-.Login {
+.login {
     border-style: solid; 
     border-color: #455C7B;
     border-radius: 15px;
@@ -9,7 +9,7 @@
     margin: 0px 30px;
 }
 
-.butt {
+.button {
     margin-bottom: 20px;
 }
 
