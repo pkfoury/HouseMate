@@ -1,8 +1,4 @@
-/* .card {
-    margin: 40px;
-} */
-
-.CardImg {
-    width: 10%;
-    height: auto;
+.person {
+    margin-bottom: 30px;
+    width: 30%;
 }
