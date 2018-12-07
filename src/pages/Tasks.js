@@ -9,6 +9,7 @@ class Home extends Component {
     this.state = {
       users: null,
       houseName: null,
+      homeId: null
     }
     // this.handle = this.handle.bind(this)
   }
@@ -17,7 +18,8 @@ class Home extends Component {
     // TODO: get home associated with logged in user
     apiGet('homes').then(({ data }) => {
       this.setState({
-        houseName: data[0]['name']
+        houseName: data[0]['name'],
+        homeId: data[0]['id']
       })
     })
 
@@ -42,6 +44,7 @@ class Home extends Component {
     return (
       <div className="tasks">
         <h1> {this.state.houseName} </h1>
+
           <Chore />
       </div>
     );

@@ -10,7 +10,8 @@ class Home extends Component {
     this.state = {
       users: {},
       home: {},
-      cards: null
+      cards: null,
+      homeId: null
     }
     // this.handle = this.handle.bind(this)
   }
@@ -48,6 +49,7 @@ class Home extends Component {
     return (
       <div className="home">
         <h1> {this.state.home['name']} </h1>
+        <h1> {this.state.home['id']} </h1>
         <CardDeck>
           {this.state.cards}
         </CardDeck>
