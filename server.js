@@ -4,6 +4,12 @@ const path = require('path');
 require('dotenv').config()
 
 const app = express();
+app.use(express.static(path.join(__dirname, 'build')));
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 const db = mysql.createConnection({
   host: '127.0.0.1',
@@ -14,24 +20,28 @@ const db = mysql.createConnection({
 
 db.connect();
 
-app.use(express.static(path.join(__dirname, 'build')));
-
 // get homes
-app.get('/homes', (req, res) => {
-  console.log('homes endpoint');
-  db.query('SELECT * FROM homes', function (error, results) {
-    if (error) throw error;
-    res.send(results);
-  });
+app.get('/homes', (req, res, next) => {
+  if (req.query.id) {
+    db.query('SELECT * FROM homes WHERE homes.id = ' + req.query.id, function (error, results) {
+      if (error) throw error;
+      res.send(results[0]);
+    });
+  } else {
+    next("home not found")
+  }
 })
 
-// get member
-app.get('/members', (req, res) => {
-  console.log('members endpoint');
-  db.query('SELECT * FROM members', function (error, results) {
-    if (error) throw error;
-    res.send(results);
-  });
+// get members
+app.get('/members', (req, res, next) => {
+  if (req.query.home_id) {
+    db.query('SELECT * FROM members WHERE home_id = ' + req.query.home_id, function (error, results) {
+      if (error) throw error;
+      res.send(results);
+    });
+  } else {
+    next("home not found");
+  }
 })
 
 // get tasks

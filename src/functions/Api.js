@@ -20,22 +20,8 @@ export function apiGet(endpoint, token = getToken()) {
     method: 'GET',
     headers: getHeaders(token),
   }
-  return axios.get(`${API_URL}${endpoint}&Token=` + token, options);
-}
-
-export function apiDelete(endpoint, token = getToken()) {
-  // isAuthenticated()
-  const options = {
-    method: 'DELETE',
-    headers: getHeaders(token)
-  }
-
-  if (endpoint.includes("?")) {
-    return axios.delete(`${API_URL}${endpoint}&Token=` + token, options);
-  }
-  else {
-    return axios.delete(`${API_URL}${endpoint}?Token=` + token, options);
-  }
+  return axios.get(`${API_URL}${endpoint}`)
+  // return axios.get(`${API_URL}${endpoint}&Token=` + token, options);
 }
 
 export function apiPost(endpoint, data = {}, token = getToken()) {
@@ -50,5 +36,20 @@ export function apiPost(endpoint, data = {}, token = getToken()) {
   }
   else {
     return axios.post(`${API_URL}${endpoint}?Token=` + token, options);
+  }
+}
+
+export function apiDelete(endpoint, token = getToken()) {
+  // isAuthenticated()
+  const options = {
+    method: 'DELETE',
+    headers: getHeaders(token)
+  }
+
+  if (endpoint.includes("?")) {
+    return axios.delete(`${API_URL}${endpoint}&Token=` + token, options);
+  }
+  else {
+    return axios.delete(`${API_URL}${endpoint}?Token=` + token, options);
   }
 }

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input,  } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, } from 'reactstrap';
 import './Styling/Login.css';
 
 class Login extends Component {
   constructor(props) {
     super(props);
-    this.state = {  
+    this.state = {
       email: "",
       password: ""
     }
@@ -13,12 +13,12 @@ class Login extends Component {
   validateForm() {
     return this.state.email.length > 0 && this.state.password.length > 0;
   }
-  
+
   // handleSubmit = event => {
   //   event.preventDefault();
   // }
-  
-  render() { 
+
+  render() {
     return (
       <div className="login">
         <h3 className="title">Login</h3>
@@ -28,7 +28,7 @@ class Login extends Component {
             <Input type="email" name="email" id="exampleEmail" placeholder="Email" />
           </FormGroup>
 
-          <FormGroup  className="input">
+          <FormGroup className="input">
             <Label for="exampleEmail">Password</Label>
             <Input type="email" name="email" id="exampleEmail" placeholder="Password" />
           </FormGroup>
@@ -36,9 +36,9 @@ class Login extends Component {
 
         <Button className="button">Login</Button>
       </div>
-      
-      );
-    }
+
+    );
   }
-  
-  export default Login;
+}
+
+export default Login;

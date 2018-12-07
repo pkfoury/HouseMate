@@ -4,6 +4,8 @@ import './App.css';
 import Home from './pages/Home'
 import Login from './pages/Login';
 import Nav from './components/GlobalNav';
+import Tasks from './pages/Tasks';
+require('dotenv').config()
 
 class App extends Component {
   render() {
@@ -17,6 +19,7 @@ class App extends Component {
             {/* if authed */}
             <Route exact path='/' component={Home} />
             <Route path='/home' component={Home} />
+            <Route path='/tasks' component={Tasks} />
           </div>
         </Router>
       </div>

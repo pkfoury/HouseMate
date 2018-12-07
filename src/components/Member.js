@@ -6,8 +6,7 @@ class MemberCard extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			name: 'Julien'
-			// names: ['Julien', 'Peter']
+			name: null
 		};
 	}
 
@@ -17,7 +16,7 @@ class MemberCard extends Component {
 				<Card >
 					<CardBody>
 						<CardImg src="https://react.semantic-ui.com/images/avatar/large/daniel.jpg" />
-						<CardTitle>{this.state.name}</CardTitle>
+						<CardTitle>{this.props.member['name']}</CardTitle>
 					</CardBody>
 				</Card>
 			</div>
