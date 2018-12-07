@@ -20,4 +20,15 @@ const getMembers = (req, res, next) => {
   }
 }
 
-module.exports = {getMembers};
+const getMember = (req, res, next) => {
+  if (req.query.id) {
+    db.query('SELECT * FROM members WHERE id = ' + req.query.id, function (error, results) {
+      if (error) throw error;
+      res.send(results);
+    });
+  } else {
+    next("member not found");
+  }
+}
+
+module.exports = {getMembers, getMember};
