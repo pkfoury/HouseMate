@@ -25,7 +25,7 @@ class Drop extends Component {
 		})
 		
 		// TODO: get users associated with home
-		apiGet('members?home_id=1').then(({ data }) => {
+		apiGet('getMembers?home_id=1').then(({ data }) => {
 			this.setState({
 				users: data
 			});
