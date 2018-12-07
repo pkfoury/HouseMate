@@ -15,6 +15,9 @@ router.get('/getMembers', member.getMembers);
 const home = require('./home');
 router.get('/getHome', home.getHome);
 
+const task = require('./tasks');
+router.get('/getTasks', task.getTasks);
+
 // const settings = require('./settings');
 // router.post('/settings/update', settings.update);
 // router.get('/settings', settings.getSettings);
