@@ -31,12 +31,12 @@ export function apiPost(endpoint, data = {}, token = getToken()) {
     headers: getHeaders(token),
     body: data
   }
-  if (endpoint.includes("?")) {
-    return axios.post(`${API_URL}${endpoint}&Token=` + token, options);
-  }
-  else {
-    return axios.post(`${API_URL}${endpoint}?Token=` + token, options);
-  }
+  // if (endpoint.includes("?")) {
+  //   return axios.post(`${API_URL}${endpoint}&Token=` + token, options);
+  // }
+  // else {
+    return axios.post(`${API_URL}${endpoint}`, options);
+  // }
 }
 
 export function apiDelete(endpoint, token = getToken()) {

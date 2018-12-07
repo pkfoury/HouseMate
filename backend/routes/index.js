@@ -6,7 +6,8 @@ const router = require('express').Router();
 
  const auth = require('./auth');
 // router.use(auth.verifyToken);
-// router.post(auth.login);
+router.post('/login', auth.login);
+router.post('/register', auth.register);
 
 const member = require('./member');
 router.get('/getMembers', member.getMembers);

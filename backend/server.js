@@ -1,8 +1,13 @@
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
 require('dotenv').config()
 
+// configure express
 const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(express.static(path.join(__dirname, '../build')));
 
 // allow cors
@@ -12,7 +17,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-// use routes
+// use routes folder
 app.use('/api', require('./routes'));
 
 // serve react site
