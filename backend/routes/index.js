@@ -18,6 +18,8 @@ router.get('/getHome', home.getHome);
 
 const task = require('./tasks');
 router.get('/getTasks', task.getTasks);
+router.post('/addTask', task.addTask);
+router.get('/deleteTask', task.deleteTask);
 
 // const settings = require('./settings');
 // router.post('/settings/update', settings.update);
