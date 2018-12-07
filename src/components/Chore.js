@@ -36,7 +36,7 @@ class Chore extends Component {
     return (
       <div className="chore">
         <Row>
-          <Col lg="10" xs="6">
+          <Col sm="10">
             <Card body >
               <p> Chore Title</p>
               <p>   { dropVal.name } </p> 
