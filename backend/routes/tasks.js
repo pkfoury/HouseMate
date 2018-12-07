@@ -9,22 +9,12 @@ const db = mysql.createConnection({
 });
 db.connect();
 
-const tasks = (req, res) => {
-  db.query('SELECT * FROM tasks', function (error, results) {
+const getTasks = (req, res) => {
+  db.query('SELECT * FROM `tasks` WHERE home_id = ' + req.query.home_id, function (error, results) {
     if (error) throw error;
     res.send(results);
   });
 }
 
-// const getTasks = (req, res, next) => {
-//   if (req.query.home_id) {
-//     db.query("SELECT * FROM tasks WHERE home_id = '" + req.query.home_id +"';", function (error, results) {
-//       if (error) throw error;
-//       res.send(results);
-//     });
-//   } else {
-//     next("home not found");
-//   }
-// }
 
-module.exports = {getTasks};
+module.exports = { getTasks }
