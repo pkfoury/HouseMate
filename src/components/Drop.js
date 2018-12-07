@@ -66,7 +66,7 @@ class Drop extends Component {
 				}) || <DropdownItem>hi</DropdownItem>}
 			</DropdownMenu>
 			</Dropdown>
-			
+
 			</div>
 			);
 		}
