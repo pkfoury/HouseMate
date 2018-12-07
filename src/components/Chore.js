@@ -1,15 +1,27 @@
 import React, { Component } from 'react';
-import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
-import './Chore.css';
+import { 
+  Card, Button, CardTitle, 
+  CardText, Row, Col } from 'reactstrap';
+
+import Drop from './Drop';
+
 
 class Chore extends Component {
   constructor(props) {
     super(props);
+    this.toggle = this.toggle.bind(this);
     this.state = {
       name: null,
       assignee: null,
-      duration: null
+      duration: null,
+      dropdownOpen: false
     }
+  }
+
+  toggle() {
+    this.setState(prevState => ({
+      dropdownOpen: !prevState.dropdownOpen
+    }));
   }
 
   render() {
@@ -19,8 +31,12 @@ class Chore extends Component {
           <Col lg="10" xs="6">
             <Card body >
               <CardTitle>Chore</CardTitle>
-              <CardText>Chore text</CardText>
-              <Button>Do something</Button>
+              <CardText>
+              <Drop/>
+
+              </CardText>
+              <CardText>Time</CardText>
+              <Button>Remove</Button>
             </Card>
           </Col>
         </Row>
