@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Styling/Home.css'
 import { CardDeck } from 'reactstrap'
 import Member from '../components/Member';
+import Add from '../components/Add';
 import { apiGet } from '../functions/Api'
 
 class Home extends Component {
@@ -49,18 +50,15 @@ class Home extends Component {
     return (
       <div className="home">
         <h1> {this.state.home['name']} </h1>
-        <h1> {this.state.home['id']} </h1>
+        <h2> Home ID: {this.state.home['id']} </h2>
         <CardDeck>
           {this.state.cards}
         </CardDeck>
+        <Add type={'Member'} p={'Enter new member\'s email'}/>
       </div>
     );
   }
 }
 
-
-{/* <p className="counter">{this.state.peanut}</p>
-  <button className="but" onClick={this.handle}>button</button>
-<Chore /> */}
 
 export default Home;

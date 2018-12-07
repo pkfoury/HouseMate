@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'reactstrap';
 import Chore from '../components/Chore'
 
 class Chores extends Component {
@@ -10,6 +11,7 @@ class Chores extends Component {
     return (
       <div className="Chores">
       <p>Page to show all Chores</p>
+      <Button>Add a Chore</Button>
       <Chore/>
       </div>
     );

@@ -61,9 +61,11 @@ class Drop extends Component {
 			<DropdownToggle caret> Change Member
 			</DropdownToggle>
 			<DropdownMenu> 
+			<DropdownItem onClick={ () => changeVal('None') } key={'None'}>{'None'}</DropdownItem>
+				
 				{ users && users.map((user) => {
 					return <DropdownItem onClick={ () => changeVal(user) } key={user.name}>{user.name}</DropdownItem>
-				}) || <DropdownItem>hi</DropdownItem>}
+				}) || <DropdownItem>None</DropdownItem>}
 			</DropdownMenu>
 			</Dropdown>
 
