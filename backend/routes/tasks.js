@@ -17,5 +17,25 @@ const getTasks = (req, res) => {
   });
 }
 
+const addTask = ({ body }) => {
+  db.query("INSERT INTO `tasks` (name, home_id) VALUES ('" + body.body.name + "', '" + body.body.id + "'", function (error, results) {
+    if (error) throw error;
+    res.send("success");
+  });
 
-module.exports = { getTasks }
+}
+
+const deleteTask = (req, res) => {
+  if (req.query.name) {
+    db.query("DELETE FROM `tasks` WHERE name = '" + req.query.name + "'", function (error, results) {
+      if (error) throw error;
+      res.send("success");
+    });
+  } else {
+    res.send('null task');
+  }
+
+}
+
+
+module.exports = { getTasks, addTask, deleteTask }
