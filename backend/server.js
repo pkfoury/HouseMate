@@ -3,7 +3,7 @@ const path = require('path');
 require('dotenv').config()
 
 const app = express();
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, '../build')));
 
 // allow cors
 app.use(function (req, res, next) {
@@ -13,7 +13,7 @@ app.use(function (req, res, next) {
 });
 
 // use routes
-app.use('/api/', require('./routes'));
+app.use('/api', require('./routes'));
 
 // serve react site
 if (process.env.NODE_ENV == 'prod') {

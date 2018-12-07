@@ -4,15 +4,15 @@ const router = require('express').Router();
  * PROTECTED ROUTES *
  ********************/
 
-const auth = require('./auth');
+ const auth = require('./auth');
 // router.use(auth.verifyToken);
 // router.post(auth.login);
 
 const member = require('./member');
-router.get('/members', member.getMembers);
+router.get('/getMembers', member.getMembers);
 
 const home = require('./home');
-router.get('/homes', home.getHome);
+router.get('/getHome', home.getHome);
 
 // const settings = require('./settings');
 // router.post('/settings/update', settings.update);
