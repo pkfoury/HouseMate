@@ -17,14 +17,14 @@ class Home extends Component {
 
   componentDidMount() {
     // TODO: get home associated with logged in user
-    apiGet('homes?id=1').then(({ data }) => {
+    apiGet('getHome?id=1').then(({ data }) => {
       this.setState({
         home: data
       })
     })
 
     // TODO: get users associated with home
-    apiGet('members?home_id=1').then(({ data }) => {
+    apiGet('getMembers?home_id=1').then(({ data }) => {
       this.setState({
         users: data
       });
