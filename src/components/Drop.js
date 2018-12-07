@@ -8,7 +8,7 @@ class Drop extends Component {
 		super(props);
 		this.toggle = this.toggle.bind(this);
 		this.state = {
-			users: {},
+			users: null,
 			home: {},
 			options: null,
 			dropdownOpen: false
@@ -36,7 +36,7 @@ class Drop extends Component {
 	
 	toggle() {
 		this.setState(prevState => ({
-			dropdownOpen: !prevState.dropdownOpen
+			dropdownOpen: !prevState.dropdownOpen,
 		}));
 	}
 	
@@ -52,13 +52,18 @@ class Drop extends Component {
 	}
 	
 	render() {
+		const { value, changeVal } = this.props;
+		const { users } = this.state;
+
 		return (
 			<div className="person">
 			<Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-			<DropdownToggle caret> Member
+			<DropdownToggle caret> Change Member
 			</DropdownToggle>
 			<DropdownMenu> 
-			{this.state.options}
+				{ users && users.map((user) => {
+					return <DropdownItem onClick={ () => changeVal(user) } key={user.name}>{user.name}</DropdownItem>
+				}) || <DropdownItem>hi</DropdownItem>}
 			</DropdownMenu>
 			</Dropdown>
 			

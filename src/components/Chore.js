@@ -14,8 +14,11 @@ class Chore extends Component {
       name: null,
       assignee: null,
       duration: null,
-      dropdownOpen: false
+      dropdownOpen: false,
+      dropVal: '',
     }
+
+    this.changeVal = this.changeVal.bind(this);
   }
 
   toggle() {
@@ -24,18 +27,23 @@ class Chore extends Component {
     }));
   }
 
+  changeVal(user) {    
+    this.setState({dropVal: user})
+  }
+
   render() {
+    const { dropVal } = this.state;
     return (
       <div className="chore">
         <Row>
           <Col lg="10" xs="6">
             <Card body >
-              <CardTitle>Chore</CardTitle>
-              <CardText>
-              <Drop/>
-
-              </CardText>
-              <CardText>Time</CardText>
+              <p> Chore Title</p>
+              <p>   { dropVal.name } </p> 
+              <Drop value={ dropVal } changeVal={ this.changeVal }/>
+             
+            
+      
               <Button>Remove</Button>
             </Card>
           </Col>
