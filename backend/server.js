@@ -18,7 +18,7 @@ app.use('/api/', require('./routes'));
 // serve react site
 if (process.env.NODE_ENV == 'prod') {
   app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+    res.sendFile(path.join(__dirname, '../build', 'index.html'));
   });
 }
 
