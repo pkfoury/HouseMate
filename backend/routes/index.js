@@ -11,7 +11,7 @@ router.post('/register', auth.register);
 
 const member = require('./member');
 router.get('/getMembers', member.getMembers);
-router.get('getMember', member.getMember)
+router.get('/getMember', member.getMember)
 
 const home = require('./home');
 router.get('/getHome', home.getHome);

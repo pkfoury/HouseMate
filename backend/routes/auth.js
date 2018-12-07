@@ -24,18 +24,19 @@ const register = ({ body }, res) => {
     });
 }
 
-const login = (req, res) => {
+const login = ({body}, res) => {
+  console.log(body.body.email)
   // check db
-  db.query("SELECT * FROM members WHERE email = '" + req.query.email + "'", function (error, results) {
+  db.query("SELECT * FROM members WHERE email = '" + body.body.email + "'", function (error, results) {
     if (error) res.send(error);
-    if (bcrypt.compareSync(req.body.password, results[0]['password'])) {
+    if (results.length > 0 && bcrypt.compareSync(body.body.password, results[0]['password'])) {
       res.status(200);
       // if in db
       // gen token
 
-      res.json({ success: true, token });
+      res.json({ success: true, token: results[0]['password'] });
     } else {
-      res.send("user not found or credentials incorrect");
+      res.json({success: false});
     }
   });
 

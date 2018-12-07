@@ -12,6 +12,7 @@ db.connect();
 const getTasks = (req, res) => {
   db.query('SELECT * FROM `tasks` WHERE home_id = ' + req.query.home_id, function (error, results) {
     if (error) throw error;
+    console.log(results);
     res.send(results);
   });
 }

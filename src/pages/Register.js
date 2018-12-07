@@ -44,7 +44,9 @@ class Register extends Component {
     };
 
     apiPost('register', userInfo).then((res) => {
-      console.log(res);
+      if(res.status == 200) {
+        window.location.href = '/login';
+      }
     })
   }
 
