@@ -5,7 +5,7 @@ import Home from './pages/Home'
 import Login from './pages/Login';
 import Nav from './components/GlobalNav';
 import Tasks from './pages/Tasks';
-require('dotenv').config()
+require('dotenv').config({ path: '../.env' })
 
 class App extends Component {
   render() {
