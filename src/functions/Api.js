@@ -1,9 +1,14 @@
 import axios from 'axios'
-// import { getToken, isAuthenticated } from './Auth';
 const API_URL = process.env.REACT_APP_API_URL || 'http://127.0.0.1:8080/api/';
 
+// function isAuthenticated(token) {
+//   if(sessionStorage.getItem('token') == null) {
+//     window.location.href = '/login';
+//   }
+// }
+
 function getToken() {
-  return ''
+  return sessionStorage.getItem('token')
 }
 
 function getHeaders(token) {
@@ -21,11 +26,11 @@ export function apiGet(endpoint, token = getToken()) {
     headers: getHeaders(token),
   }
   return axios.get(`${API_URL}${endpoint}`)
-  // return axios.get(`${API_URL}${endpoint}&Token=` + token, options);
+  // return axios.get(`${API_URL}${endpoint}`, options);
 }
 
 export function apiPost(endpoint, data = {}, token = getToken()) {
-  // if(endpoint != 'login') isAuthenticated()
+  // if(endpoint != '/login') isAuthenticated()
   const options = {
     method: 'POST',
     headers: getHeaders(token),

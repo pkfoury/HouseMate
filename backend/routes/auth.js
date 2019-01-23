@@ -12,7 +12,7 @@ const db = mysql.createConnection({
 db.connect();
 
 const verifyToken = (req, res) => {
-
+  console.log(req);
 }
 
 const register = ({ body }, res) => {
@@ -30,11 +30,10 @@ const login = ({body}, res) => {
   db.query("SELECT * FROM members WHERE email = '" + body.body.email + "'", function (error, results) {
     if (error) res.send(error);
     if (results.length > 0 && bcrypt.compareSync(body.body.password, results[0]['password'])) {
-      res.status(200);
       // if in db
       // gen token
-
-      res.json({ success: true, token: results[0]['password'] });
+      const token = jwt.sign({email: body.body.email}, process.env.JWT_SECRET);
+      res.json({ success: true, token: token });
     } else {
       res.json({success: false});
     }

@@ -36,6 +36,7 @@ class Login extends Component {
 
     apiPost('login', userInfo).then(({data}) => {
       if (data.success == true) {
+        sessionStorage.setItem('token', data['token'])
         window.location.href = '/home';
       } else {
         window.alert("Incorrect credentials");
